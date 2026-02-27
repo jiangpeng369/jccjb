@@ -8,6 +8,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 网络状态权限 - 检测网络连接 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 存储权限 - 用于缓存图片到本地 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
 
     <application
         android:name=".TFTApplication"

@@ -10,13 +10,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.tft.helper.R
 import com.tft.helper.model.Comp
+import com.tft.helper.utils.ImageCacheManager
 import com.tft.helper.utils.ScreenAdapter
+import java.io.File
 
 /**
  * 阵容列表适配器
  * 
  * 展示阵容列表，支持按热度、胜率等排序
  * 自适应屏幕宽度，动态计算列数
+ * 优先加载本地缓存图片
  */
 class CompAdapter(
     private var comps: List<Comp> = emptyList(),
@@ -92,15 +95,24 @@ class CompAdapter(
             }
             tvTraits.text = traitsText
             
-            // 加载图片
-            if (!comp.imageUrl.isNullOrEmpty()) {
+            // 加载本地缓存图片
+            val imageCacheManager = ImageCacheManager.getInstance(itemView.context)
+            val localImagePath = imageCacheManager.getCompImagePath(comp.id)
+            
+            if (localImagePath != null) {
+                // 使用本地缓存图片
+                Glide.with(itemView.context)
+                    .load(File(localImagePath))
+                    .placeholder(R.drawable.ic_comp_placeholder)
+                    .error(R.drawable.ic_comp_placeholder)
+                    .into(ivCompImage)
+            } else {
+                // 首次加载使用网络URL，并异步缓存到本地
                 Glide.with(itemView.context)
                     .load(comp.imageUrl)
                     .placeholder(R.drawable.ic_comp_placeholder)
                     .error(R.drawable.ic_comp_placeholder)
                     .into(ivCompImage)
-            } else {
-                ivCompImage.setImageResource(R.drawable.ic_comp_placeholder)
             }
             
             // 设置收藏状态

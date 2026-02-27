@@ -20,6 +20,7 @@ import com.tft.helper.R
 import com.tft.helper.model.Comp
 import com.tft.helper.network.CompDataSource
 import com.tft.helper.ui.adapter.CompAdapter
+import com.tft.helper.utils.ImageCacheManager
 import com.tft.helper.utils.LocalDataManager
 import com.tft.helper.utils.ScreenAdapter
 import kotlinx.coroutines.launch
@@ -201,6 +202,11 @@ class MainActivity : AppCompatActivity() {
                 updateFavoriteStatus()
                 progressBar.visibility = View.GONE
                 recyclerView.visibility = View.VISIBLE
+                
+                // 预下载图片到本地缓存（后台执行）
+                lifecycleScope.launch {
+                    ImageCacheManager.getInstance(this@MainActivity).preloadImages(comps)
+                }
             }.onFailure { error ->
                 progressBar.visibility = View.GONE
                 Toast.makeText(

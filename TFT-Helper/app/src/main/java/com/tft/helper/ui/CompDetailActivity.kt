@@ -12,10 +12,12 @@ import com.google.android.material.chip.ChipGroup
 import com.tft.helper.R
 import com.tft.helper.model.Comp
 import com.tft.helper.network.CompDataSource
+import com.tft.helper.utils.ImageCacheManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.File
 
 /**
  * 阵容详情Activity
@@ -100,14 +102,23 @@ class CompDetailActivity : AppCompatActivity() {
     }
 
     /**
-     * 展示阵容详情
+     * 展示阵容详情（使用本地缓存图片）
      */
     private fun displayCompDetail(comp: Comp) {
         // 设置标题
         supportActionBar?.title = comp.name
 
-        // 加载图片
-        if (!comp.imageUrl.isNullOrEmpty()) {
+        // 加载本地缓存的阵容图片
+        val imageCacheManager = ImageCacheManager.getInstance(this)
+        val localImagePath = imageCacheManager.getCompImagePath(comp.id)
+        
+        if (localImagePath != null) {
+            Glide.with(this)
+                .load(File(localImagePath))
+                .placeholder(R.drawable.ic_comp_placeholder)
+                .error(R.drawable.ic_comp_placeholder)
+                .into(ivCompImage)
+        } else if (!comp.imageUrl.isNullOrEmpty()) {
             Glide.with(this)
                 .load(comp.imageUrl)
                 .placeholder(R.drawable.ic_comp_placeholder)
@@ -147,10 +158,11 @@ class CompDetailActivity : AppCompatActivity() {
     }
 
     /**
-     * 展示英雄列表
+     * 展示英雄列表（使用本地缓存图片）
      */
     private fun displayHeroes(heroes: List<Comp.CompHero>) {
         layoutHeroes.removeAllViews()
+        val imageCacheManager = ImageCacheManager.getInstance(this)
 
         heroes.forEach { compHero ->
             val heroView = layoutInflater.inflate(R.layout.item_hero_detail, layoutHeroes, false)
@@ -170,14 +182,18 @@ class CompDetailActivity : AppCompatActivity() {
             ivCarry.visibility = if (compHero.isCarry) android.view.View.VISIBLE else android.view.View.GONE
             ivTank.visibility = if (compHero.isTank) android.view.View.VISIBLE else android.view.View.GONE
 
-            // 加载英雄图片
-            if (!compHero.hero.imageUrl.isNullOrEmpty()) {
+            // 加载本地缓存的英雄图片
+            val localImagePath = imageCacheManager.getHeroImagePath(compHero.hero.name)
+            if (localImagePath != null) {
+                Glide.with(this)
+                    .load(File(localImagePath))
+                    .placeholder(R.drawable.ic_hero_placeholder)
+                    .into(ivHero)
+            } else {
                 Glide.with(this)
                     .load(compHero.hero.imageUrl)
                     .placeholder(R.drawable.ic_hero_placeholder)
                     .into(ivHero)
-            } else {
-                ivHero.setImageResource(R.drawable.ic_hero_placeholder)
             }
 
             layoutHeroes.addView(heroView)
