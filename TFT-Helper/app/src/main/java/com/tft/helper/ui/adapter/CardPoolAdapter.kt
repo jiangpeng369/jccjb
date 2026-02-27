@@ -11,9 +11,9 @@ import com.tft.helper.R
 import com.tft.helper.calc.CardPoolCalculator
 
 /**
- * 閻楀苯绨遍崚妤勩€冮柅鍌炲帳閸?
+ * 卡池状态列表适配器
  * 
- * 鐏炴洜銇氶崥鍕闂嗗嫮娈戦崡锛勫閸撯晙缍戦幆鍛枌
+ * 显示英雄剩余数量和已被拿取数量
  */
 class CardPoolAdapter(
     private var heroStatuses: List<CardPoolCalculator.HeroCardStatus> = emptyList(),
@@ -21,7 +21,7 @@ class CardPoolAdapter(
 ) : RecyclerView.Adapter<CardPoolAdapter.CardPoolViewHolder>() {
 
     /**
-     * 閺囧瓨鏌婇弫鐗堝祦
+     * 更新数据
      */
     fun updateData(newData: List<CardPoolCalculator.HeroCardStatus>) {
         heroStatuses = newData
@@ -29,7 +29,7 @@ class CardPoolAdapter(
     }
 
     /**
-     * 閼惧嘲褰囪ぐ鎾冲閺佺増宓?
+     * 获取当前数据
      */
     fun getData(): List<CardPoolCalculator.HeroCardStatus> = heroStatuses
 
@@ -55,48 +55,48 @@ class CardPoolAdapter(
         private val tvStatus: TextView = itemView.findViewById(R.id.tv_pool_status)
 
         fun bind(heroStatus: CardPoolCalculator.HeroCardStatus) {
-            // 閼婚亶娉熼崥宥囆?
+            // 设置英雄名
             tvHeroName.text = heroStatus.heroName
 
-            // 閸撯晙缍戦弫浼村櫤
+            // 设置剩余数量
             tvRemaining.text = "${heroStatus.remaining}"
             tvRemaining.setTextColor(android.graphics.Color.parseColor(heroStatus.getRemainingColor()))
 
-            // 瀹稿弶瀣侀弫浼村櫤
-            tvTaken.text = "瀹稿弶瀣? ${heroStatus.takenCount}"
+            // 被拿取数量
+            tvTaken.text = "被拿取：${heroStatus.takenCount}"
 
-            // 鏉╂稑瀹抽弶?
+            // 进度条
             val percent = heroStatus.getRemainingPercent()
             progressBar.progress = percent
 
-            // 閻樿埖鈧焦鐖ｇ粵?
+            // 设置状态文字
             tvStatus.text = when {
-                heroStatus.remaining == 0 -> "瀹歌尙鈹?
-                heroStatus.remaining <= 3 -> "缁毖冪炊"
-                heroStatus.remaining <= 6 -> "鏉堝啫鐨?
-                heroStatus.remaining <= 10 -> "閸忓懓鍐?
-                else -> "瀵板牆顦?
+                heroStatus.remaining == 0 -> "已清空"
+                heroStatus.remaining <= 3 -> "极度稀缺"
+                heroStatus.remaining <= 6 -> "比较稀缺"
+                heroStatus.remaining <= 10 -> "库存充足"
+                else -> "大量剩余"
             }
 
             tvStatus.setTextColor(android.graphics.Color.parseColor(heroStatus.getRemainingColor()))
 
-            // 閻愮懓鍤禍瀣╂
+            // 设置点击监听
             itemView.setOnClickListener { onItemClick(heroStatus) }
 
-            // 闂€鎸庡瘻缂傛牞绶?
+            // 设置长按监听
             itemView.setOnLongClickListener {
-                // 闁氨鐓ctivity閺勫墽銇氱紓鏍帆鐎电鐦藉?
+                // 调用Activity方法显示编辑对话框
                 (itemView.context as? com.tft.helper.ui.CardPoolCalcActivity)?
                     ?.showEditCardCountDialog(heroStatus)
                 true
             }
 
-            // 閺嶈宓侀崜鈺€缍戦弫浼村櫤鐠佸墽鐤嗛懗灞炬珯閼?
+            // 根据剩余数量设置背景颜色
             val backgroundColor = when {
-                heroStatus.remaining == 0 -> "#FFEBEE"  // 濞村懐瀛?
-                heroStatus.remaining <= 3 -> "#FFF3E0"  // 濞村懏顭?
-                heroStatus.remaining <= 6 -> "#FFFDE7"  // 濞村懘绮?
-                else -> "#FFFFFF"  // 閻у€熷
+                heroStatus.remaining == 0 -> "#FFEBEE"  // 淡红色
+                heroStatus.remaining <= 3 -> "#FFF3E0"  // 淡橙色
+                heroStatus.remaining <= 6 -> "#FFFDE7"  // 淡黄色
+                else -> "#FFFFFF"  // 纯白色
             }
             cardView.setCardBackgroundColor(android.graphics.Color.parseColor(backgroundColor))
         }
