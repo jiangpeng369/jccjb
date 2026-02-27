@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    对战记录列表项布局
+    展示单条对战记录
+-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_record"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <!-- 排名 -->
+        <TextView
+            android:id="@+id/tv_rank"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_rank_circle"
+            android:gravity="center"
+            android:text="#1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
+
+        <!-- 中间信息 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <!-- 阵容名称 -->
+            <TextView
+                android:id="@+id/tv_comp_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="剪纸仙灵95"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <!-- 时间和血量 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12-01 20:30"
+                    android:textSize="12sp"
+                    android:textColor="@color/textSecondary" />
+
+                <TextView
+                    android:id="@+id/tv_health"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="12血"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorAccent" />
+            </LinearLayout>
+
+            <!-- 羁绊 -->
+            <TextView
+                android:id="@+id/tv_traits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="剪纸仙灵 决斗大师 圣贤"
+                android:textSize="11sp"
+                android:textColor="@color/textSecondary"
+                android:maxLines="1"
+                android:ellipsize="end" />
+        </LinearLayout>
+
+        <!-- LP变化 -->
+        <TextView
+            android:id="@+id/tv_lp_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+40LP"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/successColor" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

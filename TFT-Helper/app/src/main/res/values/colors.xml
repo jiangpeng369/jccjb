@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    颜色资源定义
+    定义应用中使用的所有颜色
+-->
+<resources>
+    <!-- 主题色 -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimaryLight">#BB86FC</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!-- 背景色 -->
+    <color name="background">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+
+    <!-- 文字颜色 -->
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+    <color name="textHint">#9E9E9E</color>
+
+    <!-- 状态颜色 -->
+    <color name="successColor">#4CAF50</color>
+    <color name="warningColor">#FF9800</color>
+    <color name="errorColor">#F44336</color>
+    <color name="infoColor">#2196F3</color>
+
+    <!-- 阵容评级颜色 -->
+    <color name="tierS">#FF6B6B</color>
+    <color name="tierA">#FFA500</color>
+    <color name="tierB">#4ECDC4</color>
+    <color name="tierC">#95A5A6</color>
+
+    <!-- 英雄费用颜色 -->
+    <color name="cost1">#808080</color>
+    <color name="cost2">#228B22</color>
+    <color name="cost3">#1E90FF</color>
+    <color name="cost4">#9932CC</color>
+    <color name="cost5">#FFD700</color>
+
+    <!-- 排名颜色 -->
+    <color name="rank1">#FFD700</color>
+    <color name="rank2">#C0C0C0</color>
+    <color name="rank3">#CD7F32</color>
+    <color name="rank4">#4ECDC4</color>
+    <color name="rankOther">#95A5A6</color>
+</resources>

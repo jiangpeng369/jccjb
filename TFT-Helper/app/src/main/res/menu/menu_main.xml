@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    主Activity菜单
+    包含搜索、刷新、收藏等功能
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 搜索 -->
+    <item
+        android:id="@+id/action_search"
+        android:title="@string/action_search"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <!-- 刷新 -->
+    <item
+        android:id="@+id/action_refresh"
+        android:title="@string/action_refresh"
+        android:icon="@drawable/ic_refresh"
+        app:showAsAction="ifRoom" />
+
+    <!-- 我的收藏 -->
+    <item
+        android:id="@+id/action_favorites"
+        android:title="@string/comp_favorite"
+        android:icon="@drawable/ic_favorite_filled"
+        app:showAsAction="ifRoom" />
+
+    <!-- 统计数据 -->
+    <item
+        android:id="@+id/action_statistics"
+        android:title="对战统计"
+        app:showAsAction="never" />
+
+    <!-- 牌库计算 -->
+    <item
+        android:id="@+id/action_card_pool"
+        android:title="牌库计算"
+        app:showAsAction="never" />
+</menu>

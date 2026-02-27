@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    卡池列表项布局
+    展示单个英雄的卡牌剩余情况
+-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_hero_pool"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:gravity="center">
+
+        <!-- 英雄名称 -->
+        <TextView
+            android:id="@+id/tv_hero_name_pool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="英雄名称"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/textPrimary"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <!-- 剩余数量 -->
+        <TextView
+            android:id="@+id/tv_remaining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="18"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary" />
+
+        <!-- 进度条 -->
+        <ProgressBar
+            android:id="@+id/progress_remaining"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="6dp"
+            android:progress="100"
+            android:progressDrawable="@drawable/progress_remaining" />
+
+        <!-- 已拿数量 -->
+        <TextView
+            android:id="@+id/tv_taken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="已拿: 0"
+            android:textSize="11sp"
+            android:textColor="@color/textSecondary" />
+
+        <!-- 状态标签 -->
+        <TextView
+            android:id="@+id/tv_pool_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:background="@drawable/bg_status_badge"
+            android:text="充足"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

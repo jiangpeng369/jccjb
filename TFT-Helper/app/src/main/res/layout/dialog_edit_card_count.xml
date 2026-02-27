@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    编辑卡牌数量对话框布局
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_dialog_hero_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="英雄名称"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/textPrimary" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="已被拿走的数量（包括所有玩家手中的、场上的、等待区的）"
+        android:textSize="14sp"
+        android:textColor="@color/textSecondary" />
+
+    <EditText
+        android:id="@+id/et_taken_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        android:hint="输入数量"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="提示：可以观察其他玩家的棋盘来估算"
+        android:textSize="12sp"
+        android:textColor="@color/textSecondary" />
+</LinearLayout>

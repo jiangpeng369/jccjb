@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AndroidManifest.xml - 应用配置文件 -->
+<!-- 声明应用的基本信息、权限和组件 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tft.helper">
+
+    <!-- 网络权限 - 用于获取阵容数据 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 网络状态权限 - 检测网络连接 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".TFTApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TFTHelper"
+        android:usesCleartextTraffic="true">
+
+        <!-- 主Activity - 应用入口 -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 阵容详情Activity -->
+        <activity
+            android:name=".ui.CompDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 对战记录Activity -->
+        <activity
+            android:name=".ui.MatchRecordActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 概率计算器Activity -->
+        <activity
+            android:name=".ui.ProbabilityCalcActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 牌库计算器Activity -->
+        <activity
+            android:name=".ui.CardPoolCalcActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+</manifest>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    英雄详情项布局
+    用于阵容详情页展示英雄
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="8dp">
+
+    <!-- 英雄头像 -->
+    <FrameLayout
+        android:layout_width="64dp"
+        android:layout_height="64dp">
+
+        <ImageView
+            android:id="@+id/iv_hero"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_hero_placeholder"
+            android:background="@drawable/bg_hero_border" />
+
+        <!-- 主C标识 -->
+        <ImageView
+            android:id="@+id/iv_carry"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="top|end"
+            android:src="@drawable/ic_carry"
+            android:visibility="gone" />
+
+        <!-- 主坦标识 -->
+        <ImageView
+            android:id="@+id/iv_tank"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="bottom|start"
+            android:src="@drawable/ic_tank"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- 英雄名称 -->
+    <TextView
+        android:id="@+id/tv_hero_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="英雄"
+        android:textSize="12sp"
+        android:textColor="@color/textPrimary"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <!-- 费用 -->
+    <TextView
+        android:id="@+id/tv_hero_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3费"
+        android:textSize="11sp"
+        android:textColor="@color/textSecondary" />
+</LinearLayout>

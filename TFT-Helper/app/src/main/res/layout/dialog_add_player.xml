@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    添加玩家对话框布局
+    用于概率计算时添加对手信息
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 玩家名称 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="玩家名称"
+        android:textSize="14sp"
+        android:textColor="@color/textSecondary" />
+
+    <EditText
+        android:id="@+id/et_player_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:hint="输入玩家名称"
+        android:text="" />
+
+    <!-- 血量 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="剩余血量"
+        android:textSize="14sp"
+        android:textColor="@color/textSecondary" />
+
+    <EditText
+        android:id="@+id/et_player_health"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="number"
+        android:hint="0-100"
+        android:text="" />
+
+    <!-- 阵容 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="已知阵容（可选）"
+        android:textSize="14sp"
+        android:textColor="@color/textSecondary" />
+
+    <EditText
+        android:id="@+id/et_player_comp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:hint="输入阵容名称" />
+</LinearLayout>

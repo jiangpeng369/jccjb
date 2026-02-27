@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    字符串资源定义
+    应用中使用的所有文本
+-->
+<resources>
+    <string name="app_name">金铲铲助手</string>
+    <string name="app_description">金铲铲之战阵容推荐与数据分析工具</string>
+
+    <!-- 导航 -->
+    <string name="nav_home">阵容库</string>
+    <string name="nav_records">对战记录</string>
+    <string name="nav_calculator">概率计算</string>
+    <string name="nav_settings">设置</string>
+
+    <!-- 阵容相关 -->
+    <string name="comp_title">阵容推荐</string>
+    <string name="comp_hot">热门阵容</string>
+    <string name="comp_favorite">我的收藏</string>
+    <string name="comp_search_hint">搜索阵容、英雄、羁绊...</string>
+    <string name="comp_tier_format">%s级阵容</string>
+    <string name="comp_popularity_format">热度 %d</string>
+    <string name="comp_win_rate_format">胜率 %.1f%%</string>
+    <string name="comp_top4_rate_format">前四 %.1f%%</string>
+
+    <!-- 概率计算 -->
+    <string name="calc_title">概率计算器</string>
+    <string name="calc_meet_title">碰对手概率</string>
+    <string name="calc_dice_title">D牌概率</string>
+    <string name="calc_item_title">装备概率</string>
+    <string name="calc_input_total_players">存活玩家数</string>
+    <string name="calc_input_level">当前等级</string>
+    <string name="calc_input_gold">可用金币</string>
+    <string name="calc_result_title">计算结果</string>
+
+    <!-- 对战记录 -->
+    <string name="record_title">对战记录</string>
+    <string name="record_add">添加记录</string>
+    <string name="record_empty">暂无对战记录</string>
+    <string name="record_comp">使用阵容</string>
+    <string name="record_rank">最终排名</string>
+    <string name="record_health">剩余血量</string>
+    <string name="record_lobby_type">对局类型</string>
+    <string name="record_notes">备注</string>
+    <string name="record_save">保存记录</string>
+
+    <!-- 操作按钮 -->
+    <string name="action_search">搜索</string>
+    <string name="action_refresh">刷新</string>
+    <string name="action_favorite">收藏</string>
+    <string name="action_share">分享</string>
+    <string name="action_delete">删除</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_confirm">确定</string>
+
+    <!-- 提示信息 -->
+    <string name="toast_save_success">保存成功</string>
+    <string name="toast_save_failed">保存失败</string>
+    <string name="toast_delete_success">删除成功</string>
+    <string name="toast_network_error">网络错误，请检查网络连接</string>
+    <string name="toast_no_data">暂无数据</string>
+
+    <!-- 对局类型 -->
+    <string name="lobby_ranked">排位赛</string>
+    <string name="lobby_normal">匹配赛</string>
+    <string name="lobby_hyper_roll">狂暴模式</string>
+    <string name="lobby_double_up">双人模式</string>
+
+    <!-- 运营阶段 -->
+    <string name="stage_early">前期 (1-3阶段)</string>
+    <string name="stage_mid">中期 (4阶段)</string>
+    <string name="stage_late">后期 (5+阶段)</string>
+
+    <!-- 其他 -->
+    <string name="version_format">当前版本: %s</string>
+    <string name="data_update_time">数据更新时间: %s</string>
+    <string name="disclaimer">本应用仅供学习交流使用，不构成游戏操作建议</string>
+</resources>

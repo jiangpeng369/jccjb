@@ -1,0 +1,27 @@
+// 项目级 build.gradle
+// 配置整个项目的构建设置和依赖版本
+
+buildscript {
+    ext {
+        // 定义全局变量，统一版本号
+        kotlin_version = '1.9.0'
+        agp_version = '8.1.0'
+    }
+    repositories {
+        google()  // Google仓库
+        mavenCentral()  // Maven中央仓库
+    }
+    dependencies {
+        // Android Gradle插件
+        classpath "com.android.tools.build:gradle:$agp_version"
+        // Kotlin插件
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
