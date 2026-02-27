@@ -86,8 +86,8 @@ class CardPoolAdapter(
             // 设置长按监听
             itemView.setOnLongClickListener {
                 // 调用Activity方法显示编辑对话框
-                (itemView.context as? com.tft.helper.ui.CardPoolCalcActivity)?
-                    ?.showEditCardCountDialog(heroStatus)
+                val activity = itemView.context as? com.tft.helper.ui.CardPoolCalcActivity
+                activity?.showEditCardCountDialog(heroStatus)
                 true
             }
 

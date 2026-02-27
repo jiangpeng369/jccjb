@@ -164,7 +164,7 @@ class CompDataSource private constructor() {
                 earlyGame = "开局抢眼泪或大棒，优先做蓝BUFF或法爆。用亚索带阿狸装备打工。",
                 midGame = "4-1拉7人口，找阿狸和锤石。灵魂莲华羁绊提供团队增益。",
                 lateGame = "上8人口找辛德拉，阵容大成。注意调整灵魂莲华链接关系。",
-                positioning = "锤石前排承伤，阿狸站角落输出，注意防刺客。
+                positioning = "锤石前排承伤，阿狸站角落输出，注意防刺客。"
             ),
 
             // 3. 天将 - S级赌狗阵容
@@ -289,7 +289,7 @@ class CompDataSource private constructor() {
                 earlyGame = "开局抢攻速或拳套，做羊刀或泰坦。用德莱厄斯带装备打工。",
                 midGame = "3-2拉6人口，D三星狗熊和崔丝塔娜。决斗大师羁绊提供攻速。",
                 lateGame = "三星后上人口补高费卡，墨之影提供额外伤害。",
-                positioning = "分散站位，利用决斗大师的攻速叠加。")
+                positioning = "分散站位，利用决斗大师的攻速叠加。"
             )
         )
     }
