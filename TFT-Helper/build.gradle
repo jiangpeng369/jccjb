@@ -19,9 +19,4 @@ buildscript {
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+// 仓库配置已移到 settings.gradle
