@@ -43,7 +43,7 @@ jobs:
       working-directory: ./TFT-Helper
 
     - name: Build Debug APK
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleDebug --stacktrace
       working-directory: ./TFT-Helper
       env:
         ANDROID_HOME: ${{ env.ANDROID_HOME }}
