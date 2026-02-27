@@ -105,13 +105,13 @@ class CompDataSource private constructor() {
                 top4Rate = 68.2,
                 coreHeroes = listOf(
                     Comp.CompHero(
-                        hero = Hero("h001", "凯尔", 5, listOf("剪纸仙灵", "决斗大师"), isCarry = true),
+                        hero = Hero("h001", "凯尔", 5, listOf("剪纸仙灵", "决斗大师")),
                         star = 2,
                         isCarry = true,
                         position = Comp.Position.BACK
                     ),
                     Comp.CompHero(
-                        hero = Hero("h002", "加里奥", 4, listOf("剪纸仙灵", "斗士"), isTank = true),
+                        hero = Hero("h002", "加里奥", 4, listOf("剪纸仙灵", "斗士")),
                         star = 2,
                         isTank = true,
                         position = Comp.Position.FRONT
@@ -143,12 +143,12 @@ class CompDataSource private constructor() {
                 top4Rate = 61.5,
                 coreHeroes = listOf(
                     Comp.CompHero(
-                        hero = Hero("h004", "阿狸", 4, listOf("灵魂莲华", "法师"), isCarry = true),
+                        hero = Hero("h004", "阿狸", 4, listOf("灵魂莲华", "法师")),
                         star = 2,
                         isCarry = true
                     ),
                     Comp.CompHero(
-                        hero = Hero("h005", "锤石", 4, listOf("灵魂莲华", "护卫"), isTank = true),
+                        hero = Hero("h005", "锤石", 4, listOf("灵魂莲华", "护卫")),
                         star = 2,
                         isTank = true
                     ),
@@ -178,12 +178,12 @@ class CompDataSource private constructor() {
                 top4Rate = 65.0,
                 coreHeroes = listOf(
                     Comp.CompHero(
-                        hero = Hero("h007", "卡兹克", 1, listOf("天将", "死神"), isCarry = true),
+                        hero = Hero("h007", "卡兹克", 1, listOf("天将", "死神")),
                         star = 3,
                         isCarry = true
                     ),
                     Comp.CompHero(
-                        hero = Hero("h008", "墨菲特", 1, listOf("天将", "擎天卫"), isTank = true),
+                        hero = Hero("h008", "墨菲特", 1, listOf("天将", "擎天卫")),
                         star = 3,
                         isTank = true
                     )
@@ -210,7 +210,7 @@ class CompDataSource private constructor() {
                 top4Rate = 58.0,
                 coreHeroes = listOf(
                     Comp.CompHero(
-                        hero = Hero("h009", "拉露恩", 3, listOf("夜幽", "神谕者"), isCarry = true),
+                        hero = Hero("h009", "拉露恩", 3, listOf("夜幽", "神谕者")),
                         star = 3,
                         isCarry = true
                     ),
@@ -240,12 +240,12 @@ class CompDataSource private constructor() {
                 top4Rate = 50.5,
                 coreHeroes = listOf(
                     Comp.CompHero(
-                        hero = Hero("h011", "千珏", 4, listOf("死神", "青花瓷"), isCarry = true),
+                        hero = Hero("h011", "千珏", 4, listOf("死神", "青花瓷")),
                         star = 2,
                         isCarry = true
                     ),
                     Comp.CompHero(
-                        hero = Hero("h012", "阿木木", 3, listOf("护卫", "青花瓷"), isTank = true),
+                        hero = Hero("h012", "阿木木", 3, listOf("护卫", "青花瓷")),
                         star = 3,
                         isTank = true
                     )
@@ -272,7 +272,7 @@ class CompDataSource private constructor() {
                 top4Rate = 59.5,
                 coreHeroes = listOf(
                     Comp.CompHero(
-                        hero = Hero("h013", "沃利贝尔", 3, listOf("决斗大师", "墨之影"), isCarry = true),
+                        hero = Hero("h013", "沃利贝尔", 3, listOf("决斗大师", "墨之影")),
                         star = 3,
                         isCarry = true
                     ),
